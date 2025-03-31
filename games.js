@@ -92,7 +92,7 @@ const quizDatabase = {
             ]
         }
     },
-    math: {
+    maths: {
         easy: {
             points: 10,
             questions: [
