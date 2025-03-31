@@ -614,7 +614,7 @@ function showGameSelection() {
             <div class="game-card" data-game="maths">
                 <h3>Maths Challenge</h3>
                 <p>Put your mathematical skills to the test</p>
-                <button class="play-btn" onclick="showDifficultySelection('math')">Play Now</button>
+                <button class="play-btn" onclick="showDifficultySelection('maths')">Play Now</button>
             </div>
             <div class="game-card" data-game="science">
                 <h3>Science Quiz</h3>
