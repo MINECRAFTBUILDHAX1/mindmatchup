@@ -329,7 +329,7 @@ function generateDailyQuestions() {
     
     // Use the seed to generate consistent questions for the day
     const dailyQuestions = [];
-    const categories = ['general', 'math', 'science', 'history'];
+    const categories = ['general', 'maths', 'science', 'history'];
     
     // Get 2 questions from each category
     categories.forEach(category => {
