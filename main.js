@@ -165,11 +165,15 @@ function checkAnswer(selectedIndex) {
     
     if (selectedIndex === question.correct) {
         buttons[selectedIndex].classList.add('correct');
-        // Only add points for non-custom quizzes
-        if (currentGameType !== 'custom') {
-            score += quizDatabase[currentGameType][currentDifficulty].points;
-        } else {
+         // Handle points based on game type
+        if (currentGameType === 'daily') {
+            score += 15; // Fixed points for daily challenge
+        } else if (currentGameType === 'custom') {
             score += 10; // Default points for custom quizzes
+        } else {
+       
+            score += quizDatabase[currentGameType][currentDifficulty].points;
+       
         }
         playSound('correct');
     } else {
