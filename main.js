@@ -312,6 +312,7 @@ function startDailyChallenge() {
     currentQuestion = 0;
     score = 0;
     timeLeft = 60; // 1 minute in seconds
+    currentGameType = 'daily';
     
     const gameTitle = document.getElementById('gameTitle');
     gameTitle.textContent = 'Daily Challenge';
