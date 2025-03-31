@@ -21,8 +21,8 @@ class GameManager {
             case 'word':
                 this.currentGame = new WordGame(difficulty);
                 break;
-            case 'math':
-                this.currentGame = new MathGame(difficulty);
+            case 'maths':
+                this.currentGame = new MathsGame(difficulty);
                 break;
             case 'memory':
                 this.currentGame = new MemoryGame(difficulty);
@@ -69,9 +69,9 @@ class GameManager {
                             <h3>Word Puzzle</h3>
                             <p>Unscramble words and solve word puzzles</p>
                         </div>
-                        <div class="game-card" onclick="gameManager.selectGame('math')">
+                        <div class="game-card" onclick="gameManager.selectGame('maths')">
                             <i class="fas fa-calculator"></i>
-                            <h3>Math Challenge</h3>
+                            <h3>Maths Challenge</h3>
                             <p>Solve mathematical problems of varying difficulty</p>
                         </div>
                         <div class="game-card" onclick="gameManager.selectGame('memory')">
