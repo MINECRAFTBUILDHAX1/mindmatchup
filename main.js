@@ -165,15 +165,13 @@ function checkAnswer(selectedIndex) {
     
     if (selectedIndex === question.correct) {
         buttons[selectedIndex].classList.add('correct');
-         // Handle points based on game type
+        // Handle points based on game type
         if (currentGameType === 'daily') {
             score += 15; // Fixed points for daily challenge
         } else if (currentGameType === 'custom') {
             score += 10; // Default points for custom quizzes
         } else {
-       
             score += quizDatabase[currentGameType][currentDifficulty].points;
-       
         }
         playSound('correct');
     } else {
@@ -394,9 +392,21 @@ function createCustomQuiz() {
     let hasError = false;
     
     questionElements.forEach((element, index) => {
-        const questionText = element.querySelector('input[type="text"]').value.trim();
-        const options = Array.from(element.querySelectorAll('.option-input input[type="text"]')).map(input => input.value.trim());
-        const correct = element.querySelector('input[type="radio"]:checked');
+        // Get the question text from the input field
+        const questionInput = element.querySelector(`#question${index + 1}`);
+        if (!questionInput) {
+            alert(`Please enter text for Question ${index + 1}.`);
+            hasError = true;
+            return;
+        }
+        const questionText = questionInput.value.trim();
+        
+        // Get all option inputs
+        const optionInputs = element.querySelectorAll('.option-input input[type="text"]');
+        const options = Array.from(optionInputs).map(input => input.value.trim());
+        
+        // Get the selected correct answer
+        const correctRadio = element.querySelector(`input[name="correct${index + 1}"]:checked`);
         
         // Validate question text
         if (!questionText) {
@@ -413,7 +423,7 @@ function createCustomQuiz() {
         }
         
         // Validate correct answer selection
-        if (!correct) {
+        if (!correctRadio) {
             alert(`Please select the correct answer for Question ${index + 1}.`);
             hasError = true;
             return;
@@ -422,7 +432,7 @@ function createCustomQuiz() {
         questions.push({
             question: questionText,
             options: options,
-            correct: parseInt(correct.value)
+            correct: parseInt(correctRadio.value)
         });
     });
     
