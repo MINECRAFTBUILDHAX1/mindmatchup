@@ -228,7 +228,7 @@ const gameTypes = {
             }
         }
     },
-    math: {
+    maths: {
         difficulties: {
             easy: {
                 questions: [
