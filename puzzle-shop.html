@@ -3,393 +3,790 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindMatchUp - Puzzle Shop</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Puzzle Shop Specific Styles */
-        body {
-            background-color: #f5f5f5;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    <title>MindMatchUp Puzzle Shop</title>
 
-        main {
-            flex: 1;
-            padding: 2rem 0;
-        }
-        
-        .shop-header {
-            text-align: center;
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            margin-bottom: 3rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .shop-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .shop-header p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-        
-        .shop-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .product-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            margin-bottom: 3rem;
-        }
-        
-        .product-container h3 {
-            margin-bottom: 1.5rem;
-            color: #2c3e50;
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-    </style>
+    
+
+<style>
+    /* General Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+
+    header {
+        background-color: #2c3e50; /* Dark background color for header */
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .product-card {
+        background-color: white;
+        border: 1px solid #ddd; /* Light border around the card */
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        margin: 20px;
+        padding: 20px;
+        width: 280px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+        border: 2px solid #3498db; /* Blue border around each product */
+        margin-bottom: 30px; /* Spacing between products */
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px); /* Slightly lift the card on hover */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect */
+    }
+
+    /* Optional: Adding a border when the product is focused */
+    .product-card:focus {
+        border: 2px solid #3498db; /* Blue border on focus */
+        outline: none;
+    }
+
+    .buy-button-container {
+        margin-top: 20px;
+    }
+
+    .back-home {
+        display: block;
+        margin: 30px auto;
+        padding: 10px 20px;
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+
+    .back-home:hover {
+        background-color: #34495e;
+    }
+</style>
+
 </head>
 <body>
+
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>MindMatchUp</h1>
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="nav-button">Home</a>
-                <button id="privacyBtn">Privacy Policy</button>
-                <button id="termsBtn">Terms of Service</button>
-                <button id="contactBtn">Contact</button>
-            </div>
-        </nav>
+        <h1>MindMatchUp Puzzle Shop</h1>
     </header>
+<div id='product-component-1744579251393'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'zzm6cb-da.myshopify.com',
+      storefrontAccessToken: '41bf73f377090657ca9b6d0b6aec47b6',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '9569623703894',
+        node: document.getElementById('product-component-1744579251393'),
+        moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0",
+          "margin-bottom": "50px"
+        },
+        "text-align": "left"
+      },
+      "title": {
+        "font-size": "26px"
+      },
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      },
+      "price": {
+        "font-size": "18px"
+      },
+      "compareAt": {
+        "font-size": "15.299999999999999px"
+      },
+      "unitPrice": {
+        "font-size": "15.299999999999999px"
+      }
+    },
+    "layout": "horizontal",
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "description": true
+    },
+    "width": "100%",
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      },
+      "title": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "bold",
+        "font-size": "26px",
+        "color": "#4c4c4c"
+      },
+      "price": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "18px",
+        "color": "#4c4c4c"
+      },
+      "compareAt": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      },
+      "unitPrice": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "option": {},
+  "cart": {
+    "styles": {
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "background-color": "#3498db",
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      }
+    }
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+<div id='product-component-1744579343874'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'zzm6cb-da.myshopify.com',
+      storefrontAccessToken: '41bf73f377090657ca9b6d0b6aec47b6',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '9569646281046',
+        node: document.getElementById('product-component-1744579343874'),
+        moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0",
+          "margin-bottom": "50px"
+        },
+        "text-align": "left"
+      },
+      "title": {
+        "font-size": "26px"
+      },
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      },
+      "price": {
+        "font-size": "18px"
+      },
+      "compareAt": {
+        "font-size": "15.299999999999999px"
+      },
+      "unitPrice": {
+        "font-size": "15.299999999999999px"
+      }
+    },
+    "layout": "horizontal",
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "description": true
+    },
+    "width": "100%",
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      },
+      "title": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "bold",
+        "font-size": "26px",
+        "color": "#4c4c4c"
+      },
+      "price": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "18px",
+        "color": "#4c4c4c"
+      },
+      "compareAt": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      },
+      "unitPrice": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "option": {},
+  "cart": {
+    "styles": {
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "background-color": "#3498db",
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      }
+    }
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+<div id='product-component-1744579369842'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'zzm6cb-da.myshopify.com',
+      storefrontAccessToken: '41bf73f377090657ca9b6d0b6aec47b6',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '9569658241366',
+        node: document.getElementById('product-component-1744579369842'),
+        moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0",
+          "margin-bottom": "50px"
+        },
+        "text-align": "left"
+      },
+      "title": {
+        "font-size": "26px"
+      },
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      },
+      "price": {
+        "font-size": "18px"
+      },
+      "compareAt": {
+        "font-size": "15.299999999999999px"
+      },
+      "unitPrice": {
+        "font-size": "15.299999999999999px"
+      }
+    },
+    "layout": "horizontal",
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "description": true
+    },
+    "width": "100%",
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      },
+      "title": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "bold",
+        "font-size": "26px",
+        "color": "#4c4c4c"
+      },
+      "price": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "18px",
+        "color": "#4c4c4c"
+      },
+      "compareAt": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      },
+      "unitPrice": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "option": {},
+  "cart": {
+    "styles": {
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "background-color": "#3498db",
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      }
+    }
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+<div id='product-component-1744579384273'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'zzm6cb-da.myshopify.com',
+      storefrontAccessToken: '41bf73f377090657ca9b6d0b6aec47b6',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '9569638023510',
+        node: document.getElementById('product-component-1744579384273'),
+        moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0",
+          "margin-bottom": "50px"
+        },
+        "text-align": "left"
+      },
+      "title": {
+        "font-size": "26px"
+      },
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      },
+      "price": {
+        "font-size": "18px"
+      },
+      "compareAt": {
+        "font-size": "15.299999999999999px"
+      },
+      "unitPrice": {
+        "font-size": "15.299999999999999px"
+      }
+    },
+    "layout": "horizontal",
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "description": true
+    },
+    "width": "100%",
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      },
+      "title": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "bold",
+        "font-size": "26px",
+        "color": "#4c4c4c"
+      },
+      "price": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "18px",
+        "color": "#4c4c4c"
+      },
+      "compareAt": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      },
+      "unitPrice": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "option": {},
+  "cart": {
+    "styles": {
+      "button": {
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        "background-color": "#3498db",
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "background-color": "#3498db",
+        ":hover": {
+          "background-color": "#2f89c5"
+        },
+        ":focus": {
+          "background-color": "#2f89c5"
+        }
+      }
+    }
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
 
-    <main>
-        <section class="shop-header">
-            <h2>Puzzle Shop</h2>
-            <p>Find the perfect puzzle to challenge your mind!</p>
-        </section>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-home">Back to Home</a>
 
-        <section class="shop-container">
-            <div class="product-container">
-                <h3>Featured Puzzle</h3>
-                <div id='product-component-1744568361401'></div>
-                <script type="text/javascript">
-                /*<![CDATA[*/
-                (function () {
-                  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-                  if (window.ShopifyBuy) {
-                    if (window.ShopifyBuy.UI) {
-                      ShopifyBuyInit();
-                    } else {
-                      loadScript();
-                    }
-                  } else {
-                    loadScript();
-                  }
-                  function loadScript() {
-                    var script = document.createElement('script');
-                    script.async = true;
-                    script.src = scriptURL;
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                    script.onload = ShopifyBuyInit;
-                  }
-                  function ShopifyBuyInit() {
-                    var client = ShopifyBuy.buildClient({
-                      domain: 'zzm6cb-da.myshopify.com',
-                      storefrontAccessToken: '41bf73f377090657ca9b6d0b6aec47b6',
-                    });
-                    ShopifyBuy.UI.onReady(client).then(function (ui) {
-                      ui.createComponent('product', {
-                        id: '9569646281046',
-                        node: document.getElementById('product-component-1744568361401'),
-                        moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
-                        options: {
-                  "product": {
-                    "styles": {
-                      "product": {
-                        "@media (min-width: 601px)": {
-                          "max-width": "100%",
-                          "margin-left": "0",
-                          "margin-bottom": "50px"
-                        },
-                        "text-align": "left"
-                      },
-                      "title": {
-                        "font-size": "26px"
-                      },
-                      "button": {
-                        ":hover": {
-                          "background-color": "#2f89c5"
-                        },
-                        "background-color": "#3498db",
-                        ":focus": {
-                          "background-color": "#2f89c5"
-                        }
-                      },
-                      "price": {
-                        "font-size": "18px"
-                      },
-                      "compareAt": {
-                        "font-size": "15.299999999999999px"
-                      },
-                      "unitPrice": {
-                        "font-size": "15.299999999999999px"
-                      }
-                    },
-                    "layout": "horizontal",
-                    "contents": {
-                      "img": false,
-                      "imgWithCarousel": true,
-                      "description": true
-                    },
-                    "width": "100%",
-                    "text": {
-                      "button": "Add to cart"
-                    }
-                  },
-                  "productSet": {
-                    "styles": {
-                      "products": {
-                        "@media (min-width: 601px)": {
-                          "margin-left": "-20px"
-                        }
-                      }
-                    }
-                  },
-                  "modalProduct": {
-                    "contents": {
-                      "img": false,
-                      "imgWithCarousel": true,
-                      "button": false,
-                      "buttonWithQuantity": true
-                    },
-                    "styles": {
-                      "product": {
-                        "@media (min-width: 601px)": {
-                          "max-width": "100%",
-                          "margin-left": "0px",
-                          "margin-bottom": "0px"
-                        }
-                      },
-                      "button": {
-                        ":hover": {
-                          "background-color": "#2f89c5"
-                        },
-                        "background-color": "#3498db",
-                        ":focus": {
-                          "background-color": "#2f89c5"
-                        }
-                      },
-                      "title": {
-                        "font-family": "Helvetica Neue, sans-serif",
-                        "font-weight": "bold",
-                        "font-size": "26px",
-                        "color": "#4c4c4c"
-                      },
-                      "price": {
-                        "font-family": "Helvetica Neue, sans-serif",
-                        "font-weight": "normal",
-                        "font-size": "18px",
-                        "color": "#4c4c4c"
-                      },
-                      "compareAt": {
-                        "font-family": "Helvetica Neue, sans-serif",
-                        "font-weight": "normal",
-                        "font-size": "15.299999999999999px",
-                        "color": "#4c4c4c"
-                      },
-                      "unitPrice": {
-                        "font-family": "Helvetica Neue, sans-serif",
-                        "font-weight": "normal",
-                        "font-size": "15.299999999999999px",
-                        "color": "#4c4c4c"
-                      }
-                    },
-                    "text": {
-                      "button": "Add to cart"
-                    }
-                  },
-                  "option": {},
-                  "cart": {
-                    "styles": {
-                      "button": {
-                        ":hover": {
-                          "background-color": "#2f89c5"
-                        },
-                        "background-color": "#3498db",
-                        ":focus": {
-                          "background-color": "#2f89c5"
-                        }
-                      }
-                    },
-                    "text": {
-                      "total": "Subtotal",
-                      "button": "Checkout"
-                    }
-                  },
-                  "toggle": {
-                    "styles": {
-                      "toggle": {
-                        "background-color": "#3498db",
-                        ":hover": {
-                          "background-color": "#2f89c5"
-                        },
-                        ":focus": {
-                          "background-color": "#2f89c5"
-                        }
-                      }
-                    }
-                  }
-                },
-                        });
-                    });
-                  }
-                })();
-                /*]]>*/
-                </script>
-            </div>
-        </section>
-    </main>
-
-    <!-- Privacy Policy Modal -->
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Privacy Policy</h2>
-            <p>Last updated: March 2024</p>
-            
-            <h3>1. Information We Collect</h3>
-            <p>We collect information that you provide directly to us when using MindMatchUp:</p>
-            <ul>
-                <li>Quiz scores and performance data</li>
-                <li>Custom quizzes you create</li>
-                <li>Contact information when you reach out to us</li>
-            </ul>
-
-            <h3>2. How We Use Your Information</h3>
-            <p>We use the collected information to:</p>
-            <ul>
-                <li>Track your progress and scores</li>
-                <li>Improve our quiz content and user experience</li>
-                <li>Respond to your inquiries and support requests</li>
-                <li>Share your custom quizzes with other users (when you choose to do so)</li>
-            </ul>
-
-            <h3>3. Data Storage and Security</h3>
-            <p>Your data is stored securely using local storage in your browser. We implement appropriate security measures to protect your information from unauthorized access, alteration, disclosure, or destruction.</p>
-
-            <h3>4. Third-Party Services</h3>
-            <p>We use third-party services for:</p>
-            <ul>
-                <li>Sound effects and audio playback</li>
-                <li>Analytics to improve our service</li>
-                <li>Payment processing through Shopify</li>
-            </ul>
-
-            <h3>5. Your Rights</h3>
-            <p>You have the right to:</p>
-            <ul>
-                <li>Access your personal data</li>
-                <li>Request deletion of your data</li>
-                <li>Opt-out of data collection</li>
-            </ul>
-
-            <h3>6. Contact Us</h3>
-            <p>If you have any questions about this Privacy Policy, please contact us through our contact form.</p>
-        </div>
-    </div>
-
-    <!-- Terms of Service Modal -->
-    <div id="termsModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Terms of Service</h2>
-            <p>Last updated: March 2024</p>
-
-            <h3>1. Acceptance of Terms</h3>
-            <p>By accessing and using MindMatchUp, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our service.</p>
-
-            <h3>2. Use License</h3>
-            <p>Permission is granted to temporarily access MindMatchUp for personal, non-commercial use only. This license does not include:</p>
-            <ul>
-                <li>Modifying or copying the materials</li>
-                <li>Using the materials for commercial purposes</li>
-                <li>Attempting to decompile or reverse engineer any software</li>
-                <li>Removing any copyright or proprietary notations</li>
-            </ul>
-
-            <h3>3. User Conduct</h3>
-            <p>Users must:</p>
-            <ul>
-                <li>Provide accurate information when creating custom quizzes</li>
-                <li>Respect intellectual property rights</li>
-                <li>Not engage in any harmful or disruptive behavior</li>
-            </ul>
-
-            <h3>4. Disclaimer</h3>
-            <p>The materials on MindMatchUp are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
-
-            <h3>5. Limitations</h3>
-            <p>In no event shall MindMatchUp or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on MindMatchUp.</p>
-
-            <h3>6. Revisions and Errata</h3>
-            <p>The materials appearing on MindMatchUp could include technical, typographical, or photographic errors. We do not warrant that any of the materials are accurate, complete, or current.</p>
-        </div>
-    </div>
-
-    <!-- Contact Modal -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Contact Us</h2>
-            <p>Have questions or feedback? We'd love to hear from you!</p>
-            
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
-    </div>
-
-    <footer>
-        <p>2025 MindMatchUp. All rights reserved.</p>
-    </footer>
-
-    <script src="js/main.js"></script>
 </body>
-</html> 
+</html>
