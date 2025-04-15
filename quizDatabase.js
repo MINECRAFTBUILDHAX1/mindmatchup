@@ -333,7 +333,6 @@ const quizDatabase = {
             ]
         }
     },
-   {
     science: {
         easy: {
             points: 10,
