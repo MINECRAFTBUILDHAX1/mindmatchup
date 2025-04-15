@@ -1,4 +1,3 @@
-import quizDatabase from './quizDatabase.js';
 // Game State
 let currentQuestion = 0;
 let score = 0;
@@ -51,20 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-document.addEventListener('click', (e) => {
-    const playBtn = e.target.closest('.play-btn');
-    if (playBtn) {
-        const card = playBtn.closest('.game-card');
-        if (card) {
+    // Set up game card click handlers
+    document.querySelectorAll('.game-card').forEach(card => {
+        card.querySelector('.play-btn').addEventListener('click', () => {
             const gameType = card.dataset.game;
             currentGameType = gameType;
             const gameTitle = document.getElementById('gameTitle');
             gameTitle.textContent = `${gameType.charAt(0).toUpperCase() + gameType.slice(1)} Quiz`;
             showDifficultySelection(gameType);
-        }
-    }
-});
-
+        });
+    });
 
     // Close modals when clicking outside
     window.addEventListener('click', (e) => {
@@ -113,48 +108,35 @@ function showModal(modalName) {
     modals[modalName].classList.add('show');
 }
 
+// Start Quiz Function
 function startQuiz(gameType, difficulty) {
-    // Check if the quizDatabase is loaded
-    if (!quizDatabase || !quizDatabase[gameType] || !quizDatabase[gameType][difficulty]) {
-        console.error('Quiz database not properly loaded or quiz type not available.');
-        alert('Error: Quiz data not available. Please try again later.');
-        return; // Exit the function if data is not loaded
-    }
-
     showModal('game');
     currentGameType = gameType;
     currentDifficulty = difficulty;
-
+    
     // Reset game state
     currentQuestion = 0;
     score = 0;
-
-    // Load questions based on the game type and difficulty
+    
+    // Check if it's a custom quiz
     if (gameType === 'custom') {
         questions = currentCustomQuiz.questions;
     } else {
-        const allQuestions = quizDatabase[gameType][difficulty].questions;
-        questions = getRandomQuestions(allQuestions, 3);  // Select 3 random questions
-    }
-
-    const gameTitle = document.getElementById('gameTitle');
-    gameTitle.textContent = `${gameType.charAt(0).toUpperCase() + gameType.slice(1)} Quiz - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`;
-
-    displayQuestion();
-}
-
-// Function to get random questions
-function getRandomQuestions(allQuestions, numberOfQuestions) {
-    // Shuffle the array using Fisher-Yates algorithm
-    for (let i = allQuestions.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]]; // Swap elements
+        // For regular quizzes, get questions from the database
+        if (quizDatabase && quizDatabase[gameType] && quizDatabase[gameType][difficulty]) {
+            questions = quizDatabase[gameType][difficulty].questions;
+        } else {
+            console.error('Quiz database not properly loaded');
+            alert('Error loading quiz. Please try again.');
+            return;
+        }
     }
     
-    // Slice the first 'numberOfQuestions' elements after shuffling
-    return allQuestions.slice(0, numberOfQuestions);
+    const gameTitle = document.getElementById('gameTitle');
+    gameTitle.textContent = `${gameType.charAt(0).toUpperCase() + gameType.slice(1)} Quiz - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`;
+    
+    displayQuestion();
 }
-
 
 // Display Question Function
 function displayQuestion() {
@@ -664,32 +646,3 @@ function loadSharedQuiz() {
         }
     }
 } 
-export {
-    setupMobileNavigation,
-    showDifficultySelection,
-    showModal,
-    startQuiz,
-    getRandomQuestions,
-    displayQuestion,
-    checkAnswer,
-    endGame,
-    returnToHome,
-    resetGame,
-    playSound,
-    updateScoreDisplay,
-    updateDailyChallengeStatus,
-    startCountdown,
-    updateCountdown,
-    startDailyChallenge,
-    generateDailyQuestions,
-    startTimer,
-    createCustomQuiz,
-    copyShareLink,
-    generateShareCode,
-    addQuestionField,
-    addOption,
-    startCustomQuiz,
-    showGameSelection,
-    loadSharedQuiz
-};
-
