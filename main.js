@@ -51,16 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Set up game card click handlers
-    document.querySelectorAll('.game-card').forEach(card => {
-        card.querySelector('.play-btn').addEventListener('click', () => {
+document.addEventListener('click', (e) => {
+    const playBtn = e.target.closest('.play-btn');
+    if (playBtn) {
+        const card = playBtn.closest('.game-card');
+        if (card) {
             const gameType = card.dataset.game;
             currentGameType = gameType;
             const gameTitle = document.getElementById('gameTitle');
             gameTitle.textContent = `${gameType.charAt(0).toUpperCase() + gameType.slice(1)} Quiz`;
             showDifficultySelection(gameType);
-        });
-    });
+        }
+    }
+});
+
 
     // Close modals when clicking outside
     window.addEventListener('click', (e) => {
