@@ -682,7 +682,7 @@ export {
     createCustomQuiz,
     copyShareLink,
     generateShareCode,
-    addQuestionsField,
+    addQuestionField,
     addOption,
     startCustomQuiz,
     showGameSelection,
