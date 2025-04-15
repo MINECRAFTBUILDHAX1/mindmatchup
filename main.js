@@ -124,7 +124,11 @@ function startQuiz(gameType, difficulty) {
     } else {
         // For regular quizzes, get questions from the database
         if (quizDatabase && quizDatabase[gameType] && quizDatabase[gameType][difficulty]) {
-            questions = quizDatabase[gameType][difficulty].questions;
+            // Get the questions array
+            const allQuestions = quizDatabase[gameType][difficulty].questions;
+            
+            // Shuffle and select 3 random questions
+            questions = getRandomQuestions(allQuestions, 3);
         } else {
             console.error('Quiz database not properly loaded');
             alert('Error loading quiz. Please try again.');
@@ -137,6 +141,19 @@ function startQuiz(gameType, difficulty) {
     
     displayQuestion();
 }
+
+// Function to get random questions
+function getRandomQuestions(allQuestions, numberOfQuestions) {
+    // Shuffle the array using Fisher-Yates algorithm
+    for (let i = allQuestions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]]; // Swap elements
+    }
+    
+    // Slice the first 'numberOfQuestions' elements after shuffling
+    return allQuestions.slice(0, numberOfQuestions);
+}
+
 
 // Display Question Function
 function displayQuestion() {
