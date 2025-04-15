@@ -1,3 +1,4 @@
+import quizDatabase from './quizDatabase.js';
 // Game State
 let currentQuestion = 0;
 let score = 0;
@@ -107,7 +108,7 @@ function showModal(modalName) {
     });
     modals[modalName].classList.add('show');
 }
-import quizDatabase from './quizDatabase.js';
+
 function startQuiz(gameType, difficulty) {
     // Check if the quizDatabase is loaded
     if (!quizDatabase || !quizDatabase[gameType] || !quizDatabase[gameType][difficulty]) {
