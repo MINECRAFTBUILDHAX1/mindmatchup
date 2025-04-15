@@ -334,7 +334,6 @@ const quizDatabase = {
         }
     },
    {
-   {
     science: {
         easy: {
             points: 10,
@@ -502,7 +501,6 @@ const quizDatabase = {
             ]
         }
     },
-{
     history: {
         easy: {
             points: 10,
