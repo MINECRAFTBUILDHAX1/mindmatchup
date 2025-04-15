@@ -166,7 +166,7 @@ const quizDatabase = {
             ]
         }
     },
-   {
+   
     maths: {
         easy: {
             points: 10,
