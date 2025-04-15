@@ -660,3 +660,31 @@ function loadSharedQuiz() {
         }
     }
 } 
+export { setupMobileNavigation };
+export { showDifficultySelection };
+export { showModal };
+export { startQuiz };
+export { getRandomQuestions };
+export { displayQuestion };
+export { checkAnswer };
+export { endGame };
+export { returnToHome };
+export { resetGame };
+export { playSound };
+export { updateScoreDisplay };
+export { updateDailyChallengeStatus };
+export { startCountdown };
+export { updateCountdown };
+export { startDailyChallenge };
+export { generateDailyQuestions };
+export { startTimer };
+export { createCustomQuiz };
+export { copyShareLink };
+export { generateShareCode };
+export { addQuestionsField };
+export { addOption };
+export { startCustomQuiz };
+export { showGameSelection };
+export { loadSharedQuiz };
+};
+
