@@ -108,37 +108,33 @@ function showModal(modalName) {
     modals[modalName].classList.add('show');
 }
 
-// Start Quiz Function
 function startQuiz(gameType, difficulty) {
+    // Check if the quizDatabase is loaded
+    if (!quizDatabase || !quizDatabase[gameType] || !quizDatabase[gameType][difficulty]) {
+        console.error('Quiz database not properly loaded or quiz type not available.');
+        alert('Error: Quiz data not available. Please try again later.');
+        return; // Exit the function if data is not loaded
+    }
+
     showModal('game');
     currentGameType = gameType;
     currentDifficulty = difficulty;
-    
+
     // Reset game state
     currentQuestion = 0;
     score = 0;
-    
-    // Check if it's a custom quiz
+
+    // Load questions based on the game type and difficulty
     if (gameType === 'custom') {
         questions = currentCustomQuiz.questions;
     } else {
-        // For regular quizzes, get questions from the database
-        if (quizDatabase && quizDatabase[gameType] && quizDatabase[gameType][difficulty]) {
-            // Get the questions array
-            const allQuestions = quizDatabase[gameType][difficulty].questions;
-            
-            // Shuffle and select 3 random questions
-            questions = getRandomQuestions(allQuestions, 3);
-        } else {
-            console.error('Quiz database not properly loaded');
-            alert('Error loading quiz. Please try again.');
-            return;
-        }
+        const allQuestions = quizDatabase[gameType][difficulty].questions;
+        questions = getRandomQuestions(allQuestions, 3);  // Select 3 random questions
     }
-    
+
     const gameTitle = document.getElementById('gameTitle');
     gameTitle.textContent = `${gameType.charAt(0).toUpperCase() + gameType.slice(1)} Quiz - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`;
-    
+
     displayQuestion();
 }
 
